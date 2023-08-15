@@ -1,0 +1,22 @@
+pipeline {
+         agent any
+                 stages ( 'one') {
+                            steps  {
+                                    echo 'hi, thus is bhandhavi'
+                                    }
+                                   }
+                   stages ( 'two') {
+                            steps  {
+                                    input ('do you want to proceed?')
+                                    }
+                                   }
+                     stages ( 'three') {
+                                when {
+                                        not {  
+                                                 branch "master"
+                                    }
+                                }
+                                steps {
+                                        echo "hello"
+}
+}
